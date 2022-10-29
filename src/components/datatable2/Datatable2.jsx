@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const Datatable2 = ({columns}) => {
+const Datatable2 = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState();
@@ -18,11 +18,12 @@ const Datatable2 = ({columns}) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/${path}/${id}`);
+      await axios.delete(
+        `https://hybridhome-api.herokuapp.com/api/${path}/${id}`
+      );
       setList(list.filter((item) => item._id !== id));
-      alert("successfully deleted")
+      alert("successfully deleted");
     } catch (err) {}
-  
   };
 
   const actionColumn = [
@@ -33,7 +34,10 @@ const Datatable2 = ({columns}) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`/hotels/${params.row._id}`} style={{ textDecoration: "none" }}>
+            <Link
+              to={`https://hybridhome-api.herokuapp.com/api/hotels/${params.row._id}`}
+              style={{ textDecoration: "none" }}
+            >
               <div className="viewButton">View</div>
             </Link>
             <div
