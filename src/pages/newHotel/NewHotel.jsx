@@ -53,10 +53,7 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post(
-        "https://hybridhome-api.herokuapp.com/api/hotels",
-        newhotel
-      );
+      await axios.post("/hotels", newhotel);
       setLoading(false);
     } catch (err) {
       console.log(err);
