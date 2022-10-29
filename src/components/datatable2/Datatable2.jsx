@@ -18,9 +18,7 @@ const Datatable2 = ({ columns }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://hybridhome-api.herokuapp.com/api/${path}/${id}`
-      );
+      await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
       alert("successfully deleted");
     } catch (err) {}
@@ -35,7 +33,7 @@ const Datatable2 = ({ columns }) => {
         return (
           <div className="cellAction">
             <Link
-              to={`https://hybridhome-api.herokuapp.com/api/hotels/${params.row._id}`}
+              to={`/hotels/${params.row._id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>
