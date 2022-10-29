@@ -12,9 +12,10 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-       
-       
-      <div className="wel">Welcome to Hybrids Home and properties Dashboard</div>
+
+        <div className="wel">
+          Welcome to Hybrid Home and properties Dashboard
+        </div>
       </div>
     </div>
   );
