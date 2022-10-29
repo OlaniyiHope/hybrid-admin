@@ -24,13 +24,12 @@ const NewHotel = () => {
     );
     setRooms(value);
   };
-  
-  console.log(files)
+
+  console.log(files);
 
   const handleClick = async (e) => {
-    
     e.preventDefault();
-    
+
     try {
       const list = await Promise.all(
         Object.values(files).map(async (file) => {
@@ -54,9 +53,14 @@ const NewHotel = () => {
         photos: list,
       };
 
-      await axios.post("/hotels", newhotel);
+      await axios.post(
+        "https://hybridhome-api.herokuapp.com/api/hotels",
+        newhotel
+      );
       setLoading(false);
-    } catch (err) {console.log(err)}
+    } catch (err) {
+      console.log(err);
+    }
     setLoading(false);
   };
   return (
@@ -111,8 +115,10 @@ const NewHotel = () => {
                   <option value={true}>Yes</option>
                 </select>
               </div>
-          
-               <button onClick={handleClick}>{loading ? <>Loading..</> : <>Send</>}</button>
+
+              <button onClick={handleClick}>
+                {loading ? <>Loading..</> : <>Send</>}
+              </button>
             </form>
           </div>
         </div>
