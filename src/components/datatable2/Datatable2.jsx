@@ -18,9 +18,7 @@ const Datatable2 = ({ columns }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://hybridhome-api.herokuapp.com/api/hotels/${id}`
-      );
+      await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
       alert("successfully deleted");
     } catch (err) {}
