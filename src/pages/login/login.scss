@@ -11,7 +11,7 @@
   gap: 10px;
 }
 
-.lInput{
+.lInput {
   height: 30px;
   padding: 10px;
 }
@@ -19,14 +19,38 @@
 .lButton {
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: #008000;
   color: white;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.lButton:disabled{
-  background-color: #0071c28c;
+.lButton:disabled {
+  background-color: #008000;
   cursor: not-allowed;
+}
+@media only screen and (max-width: 570px) {
+  .login {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lInput {
+    height: 30px;
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .login {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lInput {
+    height: 30px;
+    padding: 20px;
+  }
 }

@@ -14,9 +14,23 @@
     .charts {
       padding: 5px 20px;
     }
-.wel{
-  font-size: 20px;
-}
+    .wel {
+      font-size: 20px;
+    }
+    @media only screen and (max-width: 570px) {
+      .wel {
+        font-size: 40px;
+        width: 80%;
+        margin: auto;
+      }
+    }
+    @media only screen and (max-width: 320px) {
+      .wel {
+        font-size: 40px;
+        width: 80%;
+        margin: auto;
+      }
+    }
     .listContainer {
       -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
