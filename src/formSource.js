@@ -91,7 +91,7 @@ export const hotelInputs = [
 
   {
     id: "distance",
-    label: "Property Size",
+    label: "Property Size(Sqm)",
     type: "number",
     placeholder: "500",
   },
@@ -109,7 +109,7 @@ export const hotelInputs = [
   },
   {
     id: "cheapestPrice",
-    label: "Price",
+    label: "Price(₦)",
     type: "number",
     placeholder: "100",
   },
