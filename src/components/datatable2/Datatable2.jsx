@@ -35,7 +35,7 @@ const Datatable2 = ({ columns }) => {
         return (
           <div className="cellAction">
             <Link
-              to={`/hotels/${params.row._id}`}
+              to={`https://hybridhome-api.herokuapp.com/api/hotels/${params.row._id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>
