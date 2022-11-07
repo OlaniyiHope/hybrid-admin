@@ -54,7 +54,7 @@ const Datatable2 = ({ columns }) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        <h2>Properties</h2>
+        <h4>Properties</h4>
         <Link to={`/${path}/new`} className="link">
           Add New
         </Link>
