@@ -88,10 +88,10 @@ export const hotelInputs = [
     type: "text",
     placeholder: "Lagos",
   },
- 
+
   {
     id: "distance",
-    label: "Distance from City Center",
+    label: "Property Size",
     type: "number",
     placeholder: "500",
   },
