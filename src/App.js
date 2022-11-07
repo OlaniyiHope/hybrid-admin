@@ -3,7 +3,7 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
-import Edit from "./pages/edit/Edit"
+import Edit from "./pages/edit/Edit";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
@@ -69,7 +69,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-                 <Route
+              <Route
                 path="edit"
                 element={
                   <ProtectedRoute>
@@ -78,7 +78,7 @@ function App() {
                 }
               />
             </Route>
-            <Route path="hotels">
+            <Route path="property">
               <Route
                 index
                 element={
@@ -99,11 +99,11 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewHotel  />
+                    <NewHotel />
                   </ProtectedRoute>
                 }
               />
-                  <Route
+              <Route
                 path="edithotel"
                 element={
                   <ProtectedRoute>
@@ -133,7 +133,7 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewRoom  />
+                    <NewRoom />
                   </ProtectedRoute>
                 }
               />
