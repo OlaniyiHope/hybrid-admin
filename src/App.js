@@ -78,7 +78,7 @@ function App() {
                 }
               />
             </Route>
-            <Route path="property">
+            <Route path="hotels">
               <Route
                 index
                 element={
