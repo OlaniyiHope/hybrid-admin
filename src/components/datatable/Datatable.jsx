@@ -10,7 +10,7 @@ const Datatable = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState();
-  const { data, loading, error } = useFetch(`/hotels`);
+  const { data, loading, error } = useFetch(`/${path}`);
 
   useEffect(() => {
     setList(data);
@@ -18,7 +18,7 @@ const Datatable = ({ columns }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/hotels/${id}`);
+      await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
     } catch (err) {}
   };
@@ -32,7 +32,7 @@ const Datatable = ({ columns }) => {
         return (
           <div className="cellAction">
             <Link
-              to={`/user/${params.row._id}`}
+              to={`/auth/register/${params.row._id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>
