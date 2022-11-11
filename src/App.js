@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { propertiesColumns, roomColumns, userColumns } from "./datatablesource";
-import NewProperties from "./pages/newProperties/NewProperties";
+import NewProperties from "./pages/newproperties/NewProperties";
 import NewRoom from "./pages/newRoom/NewRoom";
 import List2 from "./pages/list2/List2";
 import Single2 from "./pages/single2/Single2";
