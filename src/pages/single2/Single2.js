@@ -4,12 +4,22 @@ import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
 import List from "../../components/table/Table";
 import useFetch from "../../hooks/useFetch";
+import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import cors from "cors";
-const Single2 = ({ item }) => {
+const Single2 = ({ item, onChange }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`/hotels/find/${path}`);
+  const { setData, data, loading, error } = useFetch(
+    `/properties/find/${path}`
+  );
+
+  function handle(e) {
+    setData(e.target.value);
+    if (typeof onChange === "function") {
+      onChange(e.target.value);
+    }
+  }
 
   return (
     <div className="single">
@@ -32,8 +42,8 @@ const Single2 = ({ item }) => {
               color: "#fff",
             }}
           >
-            <Link to={`/hotels/edithotel`} style={{ color: "#fff" }}>
-              Edit Hotel
+            <Link to={`/properties/editproperties`} style={{ color: "#fff" }}>
+              Edit Properties
             </Link>{" "}
           </button>
         </div>
@@ -45,9 +55,17 @@ const Single2 = ({ item }) => {
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> Name:</strong>
+
+                  <input
+                    placeholder="hi"
+                    onChange={(e) => handle(e)}
+                    value={data.name}
+                    type="text"
+                    name="name"
+                  />
                 </span>
                 <br></br>
-                <span className="itemValue">{data.name}</span>
+                <span className="itemValue"></span>
               </div>
 
               <div className="detailItem">

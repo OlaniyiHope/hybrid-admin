@@ -3,7 +3,8 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
-import { hotelInputs } from "../../formSource";
+import { useLocation, Link } from "react-router-dom";
+import { propertiesInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
@@ -11,8 +12,9 @@ const Edit2 = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
-
-  const { data, loading, error } = useFetch("/rooms");
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+  const { data, loading, error } = useFetch(`/properties/find/properties`);
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -25,8 +27,8 @@ const Edit2 = () => {
     );
     setRooms(value);
   };
-  
-  console.log(files)
+
+  console.log(files);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -46,14 +48,16 @@ const Edit2 = () => {
         })
       );
 
-      const newhotel = {
+      const newproperties = {
         ...info,
         rooms,
         photos: list,
       };
 
-      await axios.post("/hotels", newhotel);
-    } catch (err) {console.log(err)}
+      await axios.post("/properties", newproperties);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="new">
@@ -61,8 +65,9 @@ const Edit2 = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>Add New Product</h1>
+          <h1>Edit Property</h1>
         </div>
+
         <div className="bottom">
           <div className="left">
             <img
@@ -88,38 +93,32 @@ const Edit2 = () => {
                   style={{ display: "none" }}
                 />
               </div>
+              {loading ? (
+                "Loading"
+              ) : (
+                <>
+                  {propertiesInputs &&
+                    propertiesInputs.map((data) => (
+                      <div className="formInput" key={data.id}>
+                        <label>{data.name}</label>
+                        <input
+                          id={data.id}
+                          onChange={handleChange}
+                          type={data.name}
+                          placeholder={data.placeholder}
+                        />
+                      </div>
+                    ))}
 
-              {hotelInputs.map((input) => (
-                <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
-                  <input
-                    id={input.id}
-                    onChange={handleChange}
-                    type={input.type}
-                    placeholder={input.placeholder}
-                  />
-                </div>
-              ))}
-              <div className="formInput">
-                <label>Featured</label>
-                <select id="featured" onChange={handleChange}>
-                  <option value={false}>No</option>
-                  <option value={true}>Yes</option>
-                </select>
-              </div>
-              <div className="selectRooms">
-                <label>Rooms</label>
-                <select id="rooms" multiple onChange={handleSelect}>
-                  {loading
-                    ? "loading"
-                    : data &&
-                      data.map((room) => (
-                        <option key={room._id} value={room._id}>
-                          {room.title}
-                        </option>
-                      ))}
-                </select>
-              </div>
+                  <div className="formInput">
+                    <label>Featured</label>
+                    <select id="featured" onChange={handleChange}>
+                      <option value={false}>No</option>
+                      <option value={true}>Yes</option>
+                    </select>
+                  </div>
+                </>
+              )}
               <button onClick={handleClick}>Send</button>
             </form>
           </div>

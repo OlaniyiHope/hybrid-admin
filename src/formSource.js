@@ -69,7 +69,7 @@ export const productInputs = [
   },
 ];
 
-export const hotelInputs = [
+export const propertiesInputs = [
   {
     id: "name",
     label: "Name",

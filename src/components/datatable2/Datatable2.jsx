@@ -35,7 +35,7 @@ const Datatable2 = ({ columns }) => {
         return (
           <div className="cellAction">
             <Link
-              to={`/hotels/${params.row._id}`}
+              to={`/properties/${params.row._id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>

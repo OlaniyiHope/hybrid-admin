@@ -1,13 +1,13 @@
-import "./newHotel.scss";
+import "./newProperties.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
-import { hotelInputs } from "../../formSource";
+import { propertiesInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const NewHotel = () => {
+const NewProperties = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
@@ -47,15 +47,15 @@ const NewHotel = () => {
         })
       );
 
-      const newhotel = {
+      const newproperties = {
         ...info,
         rooms,
         photos: list,
       };
 
       await axios.post(
-        "https://hybridhome-api.herokuapp.com/api/hotels",
-        newhotel
+        "https://hybridhome-api.herokuapp.com/api/properties",
+        newproperties
       );
       setLoading(false);
     } catch (err) {
@@ -97,7 +97,7 @@ const NewHotel = () => {
                 />
               </div>
 
-              {hotelInputs.map((input) => (
+              {propertiesInputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
                   <input
@@ -127,4 +127,4 @@ const NewHotel = () => {
   );
 };
 
-export default NewHotel;
+export default NewProperties;
