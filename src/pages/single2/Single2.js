@@ -51,6 +51,7 @@ const Single2 = ({ item, onChange }) => {
         `https://hybridhome-api.herokuapp.com/api/properties/${data._id}`,
         newproperties
       );
+      alert("successfully Updated Property");
     } catch (err) {
       console.log(err);
     }
