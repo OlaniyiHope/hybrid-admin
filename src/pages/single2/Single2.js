@@ -1,3 +1,4 @@
+import axios from "axios";
 import "./single2.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -15,7 +16,8 @@ const Single2 = ({ item, onChange }) => {
   );
 
   function handle(e) {
-    setData(e.target.value);
+    setData({ ...data, [e.target.name]: e.target.value });
+
     if (typeof onChange === "function") {
       onChange(e.target.value);
     }
@@ -73,42 +75,78 @@ const Single2 = ({ item, onChange }) => {
                   <strong> Address:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.address}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.address}
+                  type="text"
+                  name="address"
+                />
               </div>
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> City:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.city}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.city}
+                  type="text"
+                  name="city"
+                />
               </div>
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> Distance:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.distance}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.distance}
+                  type="text"
+                  name="distance"
+                />
               </div>
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> Details:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.detail}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.detail}
+                  type="text"
+                  name="detail"
+                />
               </div>
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> Description:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.desc}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.desc}
+                  type="text"
+                  name="desc"
+                />
               </div>
               <div className="detailItem">
                 <span className="itemKey">
                   <strong> Price:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.cheapestPrice}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.cheapestPrice}
+                  type="text"
+                  name="cheapestPrice"
+                />
               </div>
 
               <div className="detailItem">
@@ -116,7 +154,16 @@ const Single2 = ({ item, onChange }) => {
                   <strong> Featured:</strong>
                 </span>
                 <br></br>
-                <span className="itemValue">{data.featured}</span>
+                <input
+                  placeholder="hi"
+                  onChange={(e) => handle(e)}
+                  value={data.featured}
+                  type="text"
+                  name="featured"
+                />
+              </div>
+              <div>
+                <button>Add</button>
               </div>
             </div>
           </>
