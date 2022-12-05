@@ -10,6 +10,7 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import { useLocation, Link } from "react-router-dom";
 import cors from "cors";
 const Single2 = ({ item, onChange }) => {
+  const [show, setShow] = useState(false);
   const [files, setFiles] = useState("");
   const location = useLocation();
   const path = location.pathname.split("/")[2];
@@ -26,6 +27,7 @@ const Single2 = ({ item, onChange }) => {
   }
 
   const handleClick = async ({ e, id }) => {
+    setShow(true);
     try {
       const list = await Promise.all(
         Object.values(files).map(async (file) => {
@@ -56,7 +58,7 @@ const Single2 = ({ item, onChange }) => {
       console.log(err);
     }
   };
-  console.log(data);
+
   return (
     <div className="single">
       <Sidebar />
@@ -228,7 +230,9 @@ const Single2 = ({ item, onChange }) => {
                       </div>
 
                       <div>
-                        <button onClick={handleClick}>Add</button>
+                        <button className="button" onClick={handleClick}>
+                          Add
+                        </button>
                       </div>
                     </div>
                   </div>

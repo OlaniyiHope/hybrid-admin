@@ -6,8 +6,10 @@ import { useState } from "react";
 import { propertiesInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import Modal from "../modal/Modal";
 
 const NewProperties = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
@@ -116,10 +118,17 @@ const NewProperties = () => {
                 </select>
               </div>
 
-              <button onClick={handleClick}>
+              <button onClick={handleClick} className="primaryBtn">
                 {loading ? <>Loading..</> : <>Send</>}
               </button>
+              {isOpen && <Modal setIsOpen={setIsOpen} />}
             </form>
+            <main>
+              <button className="primaryBtn" onClick={() => setIsOpen(true)}>
+                Submit
+              </button>
+              {isOpen && <Modal setIsOpen={setIsOpen} />}
+            </main>
           </div>
         </div>
       </div>
