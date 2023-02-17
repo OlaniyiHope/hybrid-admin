@@ -123,12 +123,6 @@ const NewProperties = () => {
               </button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             </form>
-            <main>
-              <button className="primaryBtn" onClick={() => setIsOpen(true)}>
-                Submit
-              </button>
-              {isOpen && <Modal setIsOpen={setIsOpen} />}
-            </main>
           </div>
         </div>
       </div>
