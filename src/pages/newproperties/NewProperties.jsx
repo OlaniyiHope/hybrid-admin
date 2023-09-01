@@ -56,7 +56,7 @@ const NewProperties = () => {
       };
 
       await axios.post(
-        "https://hybridhome-api.herokuapp.com/api/properties",
+        "https://hybridapi-49ea07306725.herokuapp.com/api/properties",
         newproperties
       );
       setLoading(false);

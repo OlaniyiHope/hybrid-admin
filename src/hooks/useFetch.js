@@ -11,7 +11,7 @@ const useFetch = (url) => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `https://hybridhome-api.herokuapp.com/api${url}`
+          `https://hybridapi-49ea07306725.herokuapp.com/api${url}`
         );
         setData(res.data);
       } catch (err) {
@@ -26,7 +26,7 @@ const useFetch = (url) => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `https://hybridhome-api.herokuapp.com/api${url}`
+        `https://hybridapi-49ea07306725.herokuapp.com/api${url}`
       );
       setData(res.data);
     } catch (err) {

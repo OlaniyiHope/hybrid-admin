@@ -24,7 +24,7 @@ const Login = () => {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "https://hybridhome-api.herokuapp.com/api/auth/login",
+        "https://hybridapi-49ea07306725.herokuapp.com/api/auth/login",
         credentials
       );
       if (res.data.isAdmin) {
