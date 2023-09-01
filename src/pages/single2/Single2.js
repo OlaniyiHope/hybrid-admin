@@ -50,7 +50,7 @@ const Single2 = ({ item, onChange }) => {
       };
 
       await axios.put(
-        `https://hybridapi-49ea07306725.herokuapp.com/api/properties/${data._id}`,
+        `https://hybridapi-ef4d9b751aab.herokuapp.com/api/properties/${data._id}`,
         newproperties
       );
       alert("successfully Updated Property");

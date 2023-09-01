@@ -32,7 +32,7 @@ const New = ({ inputs, title }) => {
       };
 
       await axios.post(
-        "https://hybridapi-49ea07306725.herokuapp.com/api/auth/register",
+        "https://hybridapi-ef4d9b751aab.herokuapp.com/api/auth/register",
         newUser
       );
     } catch (err) {}
