@@ -33,7 +33,7 @@ const Datatable2 = ({ columns }) => {
         return (
           <div className="cellAction">
             <Link
-              to={`https://hybridapi-b5a8919346f7.herokuapp.com/api/properties/${params.row._id}`}
+              to={`/properties/${params.row._id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>
