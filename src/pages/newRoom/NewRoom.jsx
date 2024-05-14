@@ -23,7 +23,7 @@ const NewRoom = () => {
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
       await axios.post(
-        `https://hybridapi-ef4d9b751aab.herokuapp.com/api/rooms/${propertiesId}`,
+        `https://hybrid-api-45c4ab65a127.herokuapp.com/api/rooms/${propertiesId}`,
         { ...info, roomNumbers }
       );
     } catch (err) {

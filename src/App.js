@@ -39,6 +39,7 @@ function App() {
             <Route path="/log" element={<Logins />} />
             <Route path="/">
               <Route path="login" element={<Login />} />
+
               <Route
                 index
                 element={
