@@ -97,7 +97,7 @@ export const propertiesInputs = [
   },
   {
     id: "detail",
-    label: "Property Details",
+    label: "Property Details(please use comma to separate each details)",
     type: "text",
     placeholder: "property details",
   },
@@ -110,7 +110,7 @@ export const propertiesInputs = [
   {
     id: "cheapestPrice",
     label: "Price(₦)",
-    type: "number",
+    type: "text",
     placeholder: "100",
   },
 ];

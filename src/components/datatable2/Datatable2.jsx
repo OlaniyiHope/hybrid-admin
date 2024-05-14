@@ -10,7 +10,7 @@ const Datatable2 = ({ columns }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const [list, setList] = useState();
-  const { data, loading, error } = useFetch(`/${path}`);
+  const { data, loading, error, reFetch } = useFetch(`/${path}`);
 
   useEffect(() => {
     setList(data);
@@ -18,9 +18,12 @@ const Datatable2 = ({ columns }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/${path}/${id}`);
+      await axios.delete(
+        `https://hybrid-api-45c4ab65a127.herokuapp.com/api/properties/${id}`
+      );
       setList(list.filter((item) => item._id !== id));
       alert("successfully deleted");
+      reFetch();
     } catch (err) {}
   };
 
