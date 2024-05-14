@@ -109,7 +109,7 @@ export const propertiesInputs = [
   },
   {
     id: "cheapestPrice",
-    label: "Price(₦)",
+    label: "Price(₦) (Please dont use any letter here only number)",
     type: "text",
     placeholder: "100",
   },
