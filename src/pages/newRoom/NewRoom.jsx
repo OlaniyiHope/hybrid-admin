@@ -24,7 +24,10 @@ const NewRoom = () => {
     try {
       await axios.post(
         `https://hybrid-api-45c4ab65a127.herokuapp.com/api/rooms/${propertiesId}`,
-        { ...info, roomNumbers }
+        {
+          ...info,
+          roomNumbers,
+        }
       );
     } catch (err) {
       console.log(err);
